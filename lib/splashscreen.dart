@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:flare_flutter/flare_actor.dart';
-import 'main.dart';
+import 'bar.dart';
 
 class SplashScreenPage extends StatefulWidget {
   @override
@@ -22,11 +22,14 @@ class SplashScreenWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
+        //Tela de carregamento.
         SplashScreen(
+          //duração da tela de carregamento.
           seconds: 8,
+          //cor de fundo.
           backgroundColor: Colors.white,
-          navigateAfterSeconds: InfoGastos(
-          ),
+          //direcionando para tela principal após carregamento.
+          navigateAfterSeconds: BarNavigation(),
           loaderColor: Colors.transparent,
         ),
         Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
@@ -56,16 +59,16 @@ class SplashScreenWidget extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
+                //Texto abaixo da animação de carregamento.
                 Center(
                     child: Text(
-                      "Carregando seus impostos...",
-                       style: TextStyle(
-                        decoration: TextDecoration.none,
-                        fontSize: 14,
-                        color: Colors.black,
-                    ),
-                  )
-                )
+                  "Carregando seus impostos...",
+                  style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 14,
+                    color: Colors.black,
+                  ),
+                ))
               ],
             ),
           )

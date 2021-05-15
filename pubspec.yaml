@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   splashscreen: ^1.2.0
   flare_flutter: ^2.0.1
+  flutter_modular: ^3.2.1
+
   
 
 
