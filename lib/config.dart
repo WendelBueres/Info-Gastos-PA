@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+
+class Config extends StatefulWidget {
+  @override
+  _ConfigState createState() => _ConfigState();
+}
+
+class _ConfigState extends State<Config> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Configurações"),
+      ),
+      body: Column(
+        children: [
+          //Switch(
+          //value: AppController.instance.isDartTheme,
+          //onChanged: (value) {
+          //AppController.instance.changeTheme();
+          //},
+          //)
+        ],
+      ),
+    );
+  }
+}

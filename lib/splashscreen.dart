@@ -26,8 +26,6 @@ class SplashScreenWidget extends StatelessWidget {
         SplashScreen(
           //duração da tela de carregamento.
           seconds: 8,
-          //cor de fundo.
-          backgroundColor: Colors.white,
           //direcionando para tela principal após carregamento.
           navigateAfterSeconds: BarNavigation(),
           loaderColor: Colors.transparent,
