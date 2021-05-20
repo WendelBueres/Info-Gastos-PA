@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_controler.dart';
 
 class Config extends StatefulWidget {
   @override
@@ -8,20 +9,24 @@ class Config extends StatefulWidget {
 class _ConfigState extends State<Config> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Configurações"),
-      ),
-      body: Column(
-        children: [
-          //Switch(
-          //value: AppController.instance.isDartTheme,
-          //onChanged: (value) {
-          //AppController.instance.changeTheme();
-          //},
-          //)
-        ],
-      ),
-    );
+    return AnimatedBuilder(
+        animation: AppController.instance,
+        builder: (context, child) {
+          return Scaffold(
+              appBar: AppBar(
+                title: Text("Configurações"),
+              ),
+              body: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Switch(
+                      value: AppController.instance.isDarkTheme,
+                      onChanged: (value) {
+                        AppController.instance.changeTheme();
+                      }),
+                  Text("Modo Escuro")
+                ],
+              ));
+        });
   }
 }

@@ -3,21 +3,12 @@ import 'package:splashscreen/splashscreen.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'bar.dart';
 
-class SplashScreenPage extends StatefulWidget {
+class SplashScreenWidget extends StatefulWidget {
   @override
-  _SplashScreenPageState createState() => _SplashScreenPageState();
+  _SplashScreenWidgetState createState() => _SplashScreenWidgetState();
 }
 
-class _SplashScreenPageState extends State<SplashScreenPage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SplashScreenWidget(),
-    );
-  }
-}
-
-class SplashScreenWidget extends StatelessWidget {
+class _SplashScreenWidgetState extends State<SplashScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(

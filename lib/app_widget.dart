@@ -1,12 +1,22 @@
+import 'package:ads_project/splashscreen.dart';
 import 'package:flutter/material.dart';
+
+import 'app_controler.dart';
 
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-      primarySwatch: Colors.red,
-      brightness: Brightness.dark,
-    ));
+    return AnimatedBuilder(
+        animation: AppController.instance,
+        builder: (context, child) {
+          return MaterialApp(
+            theme: ThemeData(
+                primarySwatch: Colors.red,
+                brightness: AppController.instance.isDarkTheme
+                    ? Brightness.dark
+                    : Brightness.light),
+            home: SplashScreenWidget(),
+          );
+        });
   }
 }
