@@ -3,6 +3,7 @@ import 'package:ads_project/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'Pages/Rel1.dart';
 import 'controler/app_controler.dart';
 
 void main() {
@@ -23,6 +24,7 @@ void main() {
             debugShowCheckedModeBanner: false,
             routes: {
               "/": (context) => SplashScreenWidget(),
+              "/Rel1": (context) => Rel1(),
             },
           );
         }));
