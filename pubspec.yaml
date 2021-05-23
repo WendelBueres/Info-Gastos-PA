@@ -28,7 +28,7 @@ dependencies:
   auto_orientation: ^2.0.2
   fl_chart: ^0.12.0
 
-  
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -52,6 +52,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo.png
+    - assets/va.png
+    - assets/AG.png
     - assets/loading.flr
   # To add assets to your application, add an assets section, like this:
   # assets:

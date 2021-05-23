@@ -1,9 +1,8 @@
+import 'package:ads_project/data/rel2_data.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import '../data/rel1_data.dart';
-
-List<PieChartSectionData> getSections(int touchedIndex) => Rel1Data.rel1data
+List<PieChartSectionData> getSections(int touchedIndex) => Rel2Data.rel2data
     .asMap()
     .map<int, PieChartSectionData>((index, data) {
       //tamanho fonte chart

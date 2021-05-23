@@ -10,6 +10,7 @@ class Sobre extends StatelessWidget {
         builder: (context, child) {
           return Scaffold(
               appBar: AppBar(
+                //titulo pagina
                 title: Text("Sobre este projeto"),
               ),
               body: Padding(
@@ -17,7 +18,9 @@ class Sobre extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Center(
+                        Padding(
+                          //texto
+                            padding: const EdgeInsets.all(38),
                             child: Text(
                                 "Este projeto foi densenvolvido pelos alunos da UNAMA:",
                                 style: TextStyle(fontSize: 18, height: 1.5))),
@@ -40,7 +43,7 @@ class Sobre extends StatelessWidget {
                                   ))),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(32.0),
                           child: Center(
                             child: Text(
                               "como projeto de conclusão das disciplinas de Prática Profissional e Desenvolvimento Mobile.",

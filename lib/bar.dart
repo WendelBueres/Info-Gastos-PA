@@ -13,12 +13,13 @@ class BarNavigation extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<BarNavigation> {
+  //telas
   final List _screens = [
     Sobre(),
     Relatorios(),
     Config(),
   ];
-
+//index da tela
   int _currentIndex = 1;
 
   @override
@@ -30,16 +31,21 @@ class _MyHomePageState extends State<BarNavigation> {
             body: _screens[_currentIndex],
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: _currentIndex,
+              //função onTap
               onTap: (index) => setState(() => _currentIndex = index),
               type: BottomNavigationBarType.fixed,
+              //cores tema (? = escuro, : = claro)
               backgroundColor: AppController.instance.isDarkTheme
                   ? Colors.blue[900]
                   : Colors.red,
+                  //função que oculta labels
               showSelectedLabels: false,
               showUnselectedLabels: false,
+              //cor dos icones
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.white,
               elevation: 0.0,
+              //icones da barra
               items: [
                 Icons.contact_page_rounded,
                 Icons.insert_chart,
@@ -49,7 +55,8 @@ class _MyHomePageState extends State<BarNavigation> {
                   .map((key, value) => MapEntry(
                         key,
                         BottomNavigationBarItem(
-                          title: Text(''),
+                          //label: sem texto, o label do icones não será exibido
+                          label: (''),
                           icon: Container(
                             padding: const EdgeInsets.symmetric(
                               vertical: 6.0,

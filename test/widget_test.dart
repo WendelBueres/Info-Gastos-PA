@@ -7,8 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:ads_project/main.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() {

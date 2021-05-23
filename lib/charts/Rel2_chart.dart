@@ -1,15 +1,15 @@
-import 'package:ads_project/charts/pie_chart_rel1.dart';
+import 'package:ads_project/charts/pie_chart_rel2.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import 'indicators_rel1.dart';
+import 'indicators_rel2.dart';
 
-class Rel1ChartPage extends StatefulWidget {
+class Rel2ChartPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => Rel1ChartPageState();
+  State<StatefulWidget> createState() => Rel2ChartPageState();
 }
 
-class Rel1ChartPageState extends State {
+class Rel2ChartPageState extends State {
   int index;
 
   @override
@@ -33,7 +33,7 @@ class Rel1ChartPageState extends State {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(6),
-                  child: IndicatorsRel1Widget(),
+                  child: IndicatorsRel2Widget(),
                 ),
               ],
             ),

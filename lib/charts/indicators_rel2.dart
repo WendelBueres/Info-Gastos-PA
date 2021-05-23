@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../data/rel1_data.dart';
+import '../data/rel2_data.dart';
 
-class IndicatorsRel1Widget extends StatelessWidget {
+class IndicatorsRel2Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: Rel1Data.rel1data
+        children: Rel2Data.rel2data
             .map(
               (data) => Container(
                   //espaçamento padding
