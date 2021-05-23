@@ -1,14 +1,29 @@
 // main.dart
 import 'package:ads_project/app_widget.dart';
+import 'package:ads_project/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'app_controler.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
-    runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AppWidget(),
-    ));
+    runApp(AnimatedBuilder(
+        animation: AppController.instance,
+        builder: (context, child) {
+          return MaterialApp(
+            theme: ThemeData(
+                primaryColor: AppController.instance.isDarkTheme
+                    ? Colors.blue[900]
+                    : Colors.red,
+                brightness: AppController.instance.isDarkTheme
+                    ? Brightness.dark
+                    : Brightness.light),
+            debugShowCheckedModeBanner: false,
+            home: SplashScreenWidget(),
+          );
+        }));
   });
 }
