@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_controler.dart';
+import '../controler/app_controler.dart';
 
 class Sobre extends StatelessWidget {
   @override

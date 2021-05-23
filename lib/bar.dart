@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'app_controler.dart';
-import 'config.dart';
-import 'sobre.dart';
-import 'relatorios.dart';
+import 'controler/app_controler.dart';
+import 'Pages/config.dart';
+import 'Pages/sobre.dart';
+import 'Pages/relatorios.dart';
 
 class BarNavigation extends StatefulWidget {
   BarNavigation({Key key, this.title}) : super(key: key);

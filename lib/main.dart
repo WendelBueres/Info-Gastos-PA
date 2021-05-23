@@ -1,10 +1,9 @@
 // main.dart
-import 'package:ads_project/app_widget.dart';
 import 'package:ads_project/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'app_controler.dart';
+import 'controler/app_controler.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +21,9 @@ void main() {
                     ? Brightness.dark
                     : Brightness.light),
             debugShowCheckedModeBanner: false,
-            home: SplashScreenWidget(),
+            routes: {
+              "/": (context) => SplashScreenWidget(),
+            },
           );
         }));
   });
