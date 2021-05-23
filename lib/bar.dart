@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_controler.dart';
 import 'config.dart';
 import 'sobre.dart';
 import 'relatorios.dart';
@@ -12,7 +13,7 @@ class BarNavigation extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<BarNavigation> {
-  final tabs = [
+  final List _screens = [
     Sobre(),
     Relatorios(),
     Config(),
@@ -22,37 +23,52 @@ class _MyHomePageState extends State<BarNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        // controlador de páginas
-        body: tabs[_currentIndex],
-        //Barra de navegação inferior.
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          items: [
-            //Botão "sobre".
-            BottomNavigationBarItem(
-              icon: Icon(Icons.contact_page_rounded),
-              // ignore: deprecated_member_use
-              title: Text("Sobre"),
+    return AnimatedBuilder(
+        animation: AppController.instance,
+        builder: (context, child) {
+          return Scaffold(
+            body: _screens[_currentIndex],
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: _currentIndex,
+              onTap: (index) => setState(() => _currentIndex = index),
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: AppController.instance.isDarkTheme
+                  ? Colors.blue[900]
+                  : Colors.red,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.white,
+              elevation: 0.0,
+              items: [
+                Icons.contact_page_rounded,
+                Icons.insert_chart,
+                Icons.settings_applications_rounded
+              ]
+                  .asMap()
+                  .map((key, value) => MapEntry(
+                        key,
+                        BottomNavigationBarItem(
+                          title: Text(''),
+                          icon: Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 6.0,
+                              horizontal: 16.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: _currentIndex == key
+                                  ? Colors.blueAccent
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            child: Icon(value),
+                          ),
+                        ),
+                      ))
+                  .values
+                  .toList(),
             ),
-            //Botão "Relatórios".
-            BottomNavigationBarItem(
-              icon: Icon(Icons.addchart_rounded),
-              // ignore: deprecated_member_use
-              title: Text("Relatórios"),
-            ),
-            //Botão "Configurações".
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings_applications_rounded),
-              // ignore: deprecated_member_use
-              title: Text("Configurações"),
-            ),
-          ],
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-        ));
+          );
+        });
   }
 }
